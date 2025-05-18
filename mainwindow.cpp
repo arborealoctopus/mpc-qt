@@ -819,8 +819,6 @@ void MainWindow::setupIconThemer()
         { ui->speedIncrease, "media-seek-forward", {} },
         { ui->stepBackward, "media-skip-backward", {} },
         { ui->stepForward, "media-skip-forward", {} },
-        { ui->loopA, "zone-in", {} },
-        { ui->loopB, "zone-out", {} },
         { ui->subs, "view-media-subtitles", "view-media-subtitles-hidden" },
         { ui->mute, "player-volume", "player-volume-muted" }
     };
@@ -862,18 +860,14 @@ void MainWindow::connectButtonsToActions()
             ui->actionPlayRateIncrease, &QAction::triggered);
 
     connect(ui->skipBackward, &QPushButton::clicked,
-            ui->actionNavigateChaptersPrevious, &QAction::triggered);
+            ui->actionNavigateFilesPrevious, &QAction::triggered);
     connect(ui->stepBackward, &QPushButton::clicked,
             ui->actionPlayFrameBackward, &QAction::triggered);
     connect(ui->stepForward, &QPushButton::clicked,
             ui->actionPlayFrameForward, &QAction::triggered);
     connect(ui->skipForward, &QPushButton::clicked,
-            ui->actionNavigateChaptersNext, &QAction::triggered);
+            ui->actionNavigateFilesNext, &QAction::triggered);
 
-    connect(ui->loopA, &QPushButton::clicked,
-            ui->actionPlayLoopStart, &QAction::triggered);
-    connect(ui->loopB, &QPushButton::clicked,
-            ui->actionPlayLoopEnd, &QAction::triggered);
 
     connect(ui->subs, &QPushButton::toggled, this,
             [this](bool checked) { on_actionPlaySubtitlesEnabled_triggered(!checked); });
@@ -974,8 +968,6 @@ void MainWindow::setUiEnabledState(bool enabled)
     ui->stepForward->setEnabled(enabled);
     ui->skipBackward->setEnabled(enabled);
     ui->skipForward->setEnabled(enabled);
-    ui->loopA->setEnabled(enabled);
-    ui->loopB->setEnabled(enabled);
 
     ui->mute->setEnabled(enabled);
     volumeSlider()->setEnabled(enabled);

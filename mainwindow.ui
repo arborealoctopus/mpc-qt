@@ -448,42 +448,6 @@
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="loopA">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="toolTip">
-                <string>Set Loop Start</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normalon>:/images/theme/black/zone-in.svg</normalon>
-                </iconset>
-               </property>
-               <property name="flat">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="loopB">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="toolTip">
-                <string>Set Loop End</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normalon>:/images/theme/black/zone-out.svg</normalon>
-                </iconset>
-               </property>
-               <property name="flat">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
               <spacer name="controlbarSpacer4">
                <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
